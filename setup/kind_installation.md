@@ -163,8 +163,20 @@ echo "Please log out and log back in."
 echo "Then open a terminal and run:"
 echo "docker ps"
 ```
+```
+Save the file as:
 
----
+kind_installation.sh
+
+Make the script executable:
+
+chmod +x kind_installation.sh
+
+Run the script:
+
+./kind_installation.sh
+
+```
 
 # 3. `#!/bin/bash`
 
