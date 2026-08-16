@@ -1,0 +1,171 @@
+# ==================================================
+# Java / Maven
+# ==================================================
+
+# Compiled Java files
+*.class
+
+# Maven build output
+target/
+*/target/
+
+# Maven wrapper generated files
+.mvn/timing.properties
+
+# ==================================================
+# Spring Boot / Application
+# ==================================================
+
+# Local environment/config files
+.env
+.env.*
+!.env.example
+
+# Local application configuration
+application-local.properties
+application-local.yml
+application-local.yaml
+
+# Logs
+*.log
+logs/
+
+# ==================================================
+# IntelliJ IDEA
+# ==================================================
+
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ==================================================
+# VS Code
+# ==================================================
+
+.vscode/
+!.vscode/settings.json.example
+
+# ==================================================
+# Eclipse
+# ==================================================
+
+.classpath
+.project
+.settings/
+.factorypath
+
+# ==================================================
+# OS generated files
+# ==================================================
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# ==================================================
+# Java / Build Tools
+# ==================================================
+
+.gradle/
+build/
+*/build/
+
+# ==================================================
+# Temporary / Backup files
+# ==================================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+
+# ==================================================
+# Coverage / Test reports
+# ==================================================
+
+coverage/
+jacoco/
+*.exec
+
+# ==================================================
+# Docker
+# ==================================================
+
+# Local Docker environment files
+docker-compose.override.yml
+
+# ==================================================
+# Kubernetes
+# ==================================================
+
+# Local/generated Kubernetes files
+*.secret.yaml
+*.secret.yml
+
+# ==================================================
+# Terraform
+# ==================================================
+
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Terraform lock file SHOULD normally be committed
+# .terraform.lock.hcl
+
+# ==================================================
+# Node.js (if frontend exists anywhere)
+# ==================================================
+
+node_modules/
+*/node_modules/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==================================================
+# Python (if Python services/scripts exist)
+# ==================================================
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# ==================================================
+# Secrets / Credentials
+# ==================================================
+
+*.pem
+*.key
+*.p12
+*.jks
+*.keystore
+
+# Local secret files
+secrets/
+secret/
