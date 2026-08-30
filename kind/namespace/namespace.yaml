@@ -1,0 +1,16 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name:  nginx-ns
+
+
+
+# kubectl create ns nginx
+# kubectl run nginx --image=nginx
+# kubectl get pods
+# kubectl get pods -n nginx-ns
+# kubectl delete pod nginx
+# kubectl delete ns nginx-ns
+
+# Executing this file
+# kubectl apply -f namespace.yaml
