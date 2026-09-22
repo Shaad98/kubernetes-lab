@@ -1,0 +1,38 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+  name: backend-depl
+  namespace: nginx-ns
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: shaad98/k8s-user-management:vs2
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_URL
+          valueFrom:
+            configMapKeyRef:
+              name: application-data
+              key: DB_URL
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_PASSWORD
+        - name: DB_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              name: application-data
+              key: POSTGRES_USER

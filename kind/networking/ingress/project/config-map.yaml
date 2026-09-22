@@ -1,0 +1,11 @@
+kind: ConfigMap
+apiVersion: v1
+
+metadata:
+  name: application-data
+  namespace: nginx-ns
+
+data:
+  DB_URL: "jdbc:postgresql://postgres-service:5432/workdb"
+  POSTGRES_USER: postgres
+  POSTGRES_DB: workdb

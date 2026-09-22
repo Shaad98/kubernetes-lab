@@ -1,0 +1,47 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+  name: postgres-depl
+  namespace: nginx-ns
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - name: postgres
+        image: postgres
+        ports:
+        - containerPort: 80
+        env:
+        - name: POSTGRES_USER
+          #value: postgres
+          valueFrom:
+            configMapKeyRef:
+              name: application-data
+              key: POSTGRES_USER
+        - name: POSTGRES_DB
+          valueFrom:
+            configMapKeyRef:
+              name: application-data
+              key: POSTGRES_DB
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-secret
+              key: POSTGRES_PASSWORD
+        volumeMounts:
+        - name: my-volume
+          mountPath: /var/lib/postgresql
+      volumes:
+        - name: my-volume
+          persistentVolumeClaim:
+            claimName: local-pvc
+
